@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio Sample</title>
+  </head>
+  <body>
+    <button onclick="playAudio()">Play Audio</button>
+    <script>
+      var audio = new Audio('file:///Users/menna/Documents/Image-Line/FL%20Studio/Projects/Half%20A%20Plate%20slowed.wav');
+      var playedOnce = false;
+
+      function playAudio() {
+        if (!playedOnce) {
+          audio.play();
+          playedOnce = true;
+        }
+      }
+
+      audio.addEventListener('ended', function() {
+        audio.currentTime = 0;
+        audio.play();
+      });
+    </script>
+    <style>
+      body {
+        background-image: url('https://i.ytimg.com/vi/yy7dIhzyiag/maxresdefault.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </body>
+</html>
